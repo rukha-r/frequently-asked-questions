@@ -1,0 +1,107 @@
+* {
+  font-family: Arial;
+  margin: 0;
+  padding: 0;
+}
+html {
+  background: linear-gradient(#ad67e9, #6863e7);
+  min-height: 100vh;
+}
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  h1 {
+    text-align: center;
+    color: #f47b56;
+    padding-top: 20px;
+  }
+  hr {
+    width: 100px;
+    height: 5px;
+    border-radius: 10px;
+    border: none;
+    background: #6862e6;
+  }
+  .main-body {
+    .body {
+      height: 400px;
+      width: 650px;
+      border-radius: 10px;
+      padding: 10px;
+      margin-top: 10%;
+      display: grid;
+      grid-template-columns: 65% 60%;
+      background-color: white;
+      box-shadow: 0.2px 0.2px 40px rgba(0, 0, 0, 0.3);
+      .frq-part {
+        transform: translate(-150px, 30px);
+        background-image: url("./assets/side-image.svg");
+        background-repeat: no-repeat;
+        background-size: contain;
+      }
+      .title-part {
+        transform: translate(-125px);
+        margin: 15px;
+        overflow-y: scroll;
+        &::-webkit-scrollbar {
+          display: none;
+        }
+      }
+    }
+  }
+  .main-wrapper {
+    padding: 5px;
+    margin: 20px;
+    .question {
+      h4 {
+        color: #6862e6;
+        cursor: pointer;
+        &:hover {
+          color: #f47b56;
+        }
+      }
+    }
+    .answer {
+      opacity: 0.6;
+      padding-top: 10px;
+      word-spacing: 3px;
+    }
+  }
+}
+@media screen and (max-width: 680px) {
+  .main {
+    h1,
+    hr {
+      display: none;
+    }
+    .main-body {
+      .body {
+        margin-top: 150px;
+        width: 400px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        .frq-part {
+          width: 300px;
+          height: 300px;
+          margin-left: 130px;
+          background-image: url("./assets/mobile-version.svg");
+          position: absolute;
+          top: 0;
+          z-index: 0;
+        }
+        .title-part {
+          transform: none;
+          height: 100%;
+          width: 350px;
+          margin-top: 80px;
+          z-index: 1;
+          position: relative;
+        }
+      }
+    }
+  }
+}
